@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_wallet_app/backend/database.dart';
 
 class fillupform extends StatefulWidget {
   @override
@@ -107,10 +108,11 @@ class fillupstate extends State<fillupform> {
                     if (_formKey.currentState.validate()) {
                      _formKey.currentState.save();
                      writeToFile("username", data.nickname);
+                     dbc();
                     }
                   },
                   child: Text('continue'),
-                )
+                ),
               ],
             ),
           )

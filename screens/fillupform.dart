@@ -55,9 +55,18 @@ class fillupstate extends State<fillupform> {
     fileExists=true;
     
   }
+  bool view(){
+    if(fileExists){
+      print("User existss");
+      return true;
+      }//if ends
+    else{
+        print("User does not exists");
+        return false;
+    }
+  }
 
   void writeToFile(String key, dynamic value){
-
     print("writing to the file");
     Map<String, dynamic> content ={key: value};
     if(fileExists){
